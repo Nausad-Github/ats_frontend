@@ -1,5 +1,8 @@
 @extends('frontend/components/layout')
 @section('main')
+@php
+    $career_basic = get_career_basic(1);
+@endphp
 <main class="main">
     <!-- b-cum section start  -->
     <section class="section-box">
@@ -12,6 +15,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </section>
     <!-- b-cum section end  -->
