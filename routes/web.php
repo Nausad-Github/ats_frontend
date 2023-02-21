@@ -21,4 +21,5 @@ Route::get('/privacy-policy',[App\Http\Controllers\frontend\CareerController::cl
 Route::get('/terms-conditions',[App\Http\Controllers\frontend\CareerController::class, 'termsConditions'])->name('terms-conditions');
 Route::get('/security',[App\Http\Controllers\frontend\CareerController::class, 'security'])->name('security');
 Route::get('/filter-job',[App\Http\Controllers\frontend\CareerController::class, 'filterJob'])->name('filter-job');
+Route::get('/view-job/{job_id}',[App\Http\Controllers\frontend\CareerController::class, 'viewJob'])->name('view-job');
 

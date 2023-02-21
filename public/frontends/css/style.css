@@ -103,6 +103,15 @@ video {
   border-left: 7px solid #3C65F5;
 border-bottom: 7px solid #3c65f5;
 }
+.gender-div input:checked + label {
+	background-color: #3C65F5;
+}
+.gender-div label:hover {
+  background-color: #3C65F5;
+}
+.add-num-btn span {
+  background-color: #3C65F5;
+}
 main {
   display: block;
   clear: both;
@@ -857,7 +866,7 @@ h6,
 .display-1,
 .display-2,
 .heading-lg,
-.heading-sm-1 {
+.heading-sm-1, .job-ttl {
   color: #05264E;
 }
 
@@ -3224,18 +3233,31 @@ ul li:last-child .card-list-4 {
 .header.header-2 {
   background-color: #F8FAFF;
 }
+/* .sticky-bar.stick{
+  position: fixed;
+  top: 0;
+  background-color: red;
+  transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+} */
 
 .sticky-bar.stick {
   animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
   position: fixed;
-  top: 0;
   width: 100%;
   z-index: 999;
   left: 0;
-  transition: all 0.3s ease 0s;
+  transition: all 0.3s ease;
   border-bottom: 1px solid #E0E6F6;
   background: #fff;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 .sticky-bar.stick.sticky-white-bg {
   background-color: #fff;

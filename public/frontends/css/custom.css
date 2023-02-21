@@ -79,7 +79,6 @@
 
 .add-num-btn span {
     color: #ffffff;
-    background-color: #3C65F5;
     justify-content: center;
     display: flex !important;
     align-items: center;
@@ -140,12 +139,10 @@
 }
 
 .gender-div input:checked+label {
-    background-color: #3C65F5;
     color: #fff;
 }
 
 .gender-div label:hover {
-    background-color: #3C65F5;
     color: #fff;
 }
 
@@ -237,6 +234,7 @@
 .header {
     z-index: 999 !important;
     position: relative;
+    /* background-color: red; */
 }
 .bg-img-about.job-apply {
     background: url('../img/bg-banner.svg') no-repeat top center;
@@ -277,27 +275,88 @@
     font-weight: 600;
   }
   /* after sumit to ali  */
+
   .apply-info-title{
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #DDEBFB;
-    margin-bottom: 30px;
+    /* margin-bottom: 10px; */
     text-transform: capitalize;
+  }
+  .mb-30{
+    margin-bottom: 30px !important;
   }
   .hide-info-bar .info-bar-title{
       font-size: 14px;
   }
+  .append-top-delete{
+    color:rgb(240, 101, 72);
+  }
  .education-froms.show-edu{
     display: block;
  }
- .education-froms.hide-edu, #experience-forms-div{
+ .education-froms.hide-edu, #experience-forms-div, #skillSetFroms, #identity-froms{
     display: none;
  }
+ .mb-36{
+    margin-bottom: 36px !important;
+ }
+ .sign-in-with{
+    position: sticky;
+top: 100px;
+ }
+ .font-600{
+    font-weight: 600 !important;
+ }
+ .tic-date-picker .form-control[readonly], .last-working-div .form-control[readonly]{
+        background: transparent !important;
+ }
+ .flatpickr-months{
+    padding: 12px;
+    background-color: #3C65F5;
+ }
+ .flatpickr-months, .flatpickr-prev-month, .flatpickr-next-month{
+    top: 8px !important;
+    color: #fff;
+ }
+ .flatpickr-current-month{
+    color: #fff;
+ }
+ .flatpickr-months svg{
+    fill: #fff;
+ }
+ .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
+	background-color:#3C65F5;
+    color:  #fff;
+}
+.req-field{
+    color: rgb(240, 101, 72);
+}
+.mobile-alert{
+    font-size: 13px;
+    line-height: 22px;
+}
+.moreSkillDiv{
+    display: none;
+}
+.pt-lg-100{
+    padding-top: 110px !important;
+}
+.job-ttl{
+    font-family: "Plus Jakarta Sans", sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 26px;
+}
 /* media  */
 @media screen and (min-width: 991px) {
     .right-job-btn {
         text-align: right;
     }
+    /* .choices__inner {
+        height: 53px;
+    } */
 
 
 }
@@ -336,6 +395,13 @@
         border-bottom: 1px solid #E0E6F6;
         background: #fff;
         padding: 10px 0px 10px 0px;
+    }
+    .choices__inner {
+        min-height: 53px !important;
+        padding: 11px 20px 13px 15px;
+    }
+    .pt-sm-80{
+        padding-top: 80px !important;
     }
 
 }

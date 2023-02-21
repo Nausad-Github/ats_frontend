@@ -13,10 +13,13 @@
         var scroll = win.scrollTop();
         if (scroll < 200) {
             header.removeClass("stick");
-            $(".header-style-2 .categories-dropdown-active-large").removeClass("open");
-            $(".header-style-2 .categories-button-active").removeClass("open");
+            $('.bg-homepage1').css('min-height', '750px');
+
+            // $(".header-style-2 .categories-dropdown-active-large").removeClass("open");
+            // $(".header-style-2 .categories-button-active").removeClass("open");
         } else {
             header.addClass("stick");
+            $('.bg-homepage1').css('min-height', '620px');
         }
     });
     /*------ ScrollUp -------- */

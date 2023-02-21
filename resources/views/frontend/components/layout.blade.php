@@ -37,7 +37,18 @@ switch ($theme) {
     <meta name="keywords" content="index, page">
     <meta name="author" content="">
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/template/favicon.svg">
+    {{-- View Jobs CSS Section --}}
+    @if(Route::currentRouteName() == "view-job")
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+      <link rel="stylesheet" href="{{ url('/') }}/frontends/css/vendor/view-job/bootstrap.css">
+      <link rel="stylesheet" href="{{ url('/') }}/frontends/css/vendor/view-job/view-job.css">
+    @endif
     <link href="{{ url('/') }}/frontends/css/{{ $theme_selected }}.css" rel="stylesheet">
+    {{-- End Of View Jobs --}}
+    @if(Route::currentRouteName() == "view-job")
+      <link rel="stylesheet" href="{{ url('/') }}/frontends/css/vendor/view-job/responsive.css">
+    @endif
     <link rel="stylesheet" href="{{ url('/') }}/frontends/css/custom.css">
     <link rel="stylesheet" href="http://localhost:5000/assets/css/snackbar.min.css">
     <script src="http://localhost:5000/assets/js/snackbar.min.js"></script>

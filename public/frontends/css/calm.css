@@ -113,7 +113,7 @@ thead {
 border-bottom: 7px solid #4ecdc4;
 }
 .btn-style-one, .btn-style-three{
-  background-color: #eb5b51 !important;
+  background-color: #4ecdc4 !important;
   color: #fff;
 }
 .header-logo  .text-logo{
@@ -853,7 +853,18 @@ body {
   font-style: normal;
   font-weight: 400;
 }
-
+.gender-div input:checked + label {
+	background-color: #4ecdc4;
+}
+.gender-div label:hover {
+  background-color: #4ecdc4;
+}
+.add-num-btn span {
+  background-color: #4ecdc4;
+}
+.btn.btn-default:hover{
+  background-color: #326966 !important;
+}
 h1,
 h2,
 h3,
@@ -864,7 +875,7 @@ h6,
 .display-1,
 .display-2,
 .heading-lg,
-.heading-sm-1 {
+.heading-sm-1, .job-ttl {
   color: #1a535c;
 }
 
@@ -7261,7 +7272,7 @@ ul li:last-child .card-list-4 {
 .box-we-hiring::after {
   content: "";
   position: absolute;
-  bottom: 15px;
+  bottom: 37px;
   right: -5px;
   height: 120px;
   width: 250px;

@@ -37,7 +37,7 @@ $get_states = get_state_location();
                     <input class="form-input input-keysearch mr-10" 
                     name="keyword" type="text" placeholder="Your keyword... ">
                     <select class="form-input mr-10 select-active" 
-                     name="location" required id="location">
+                     name="location" id="location">
                       <option value="">Location</option>
                       @foreach ($get_states as $get_state)
                         <option value="{{ $get_state->loc_name }}">{{ $get_state->loc_name }}</option> 
@@ -122,7 +122,7 @@ $get_states = get_state_location();
                         </div>
                         </div>
                         <div class="col-12 col-lg-4 col-md-12 col-sm-12 right-job-btn">
-                        <a href="view-job.php/{{ $get_all_job->job_id }}" class="btn btn-apply-now">Apply now</a>
+                        <a href="{{ route('view-job', $get_all_job->job_id) }}" class="btn btn-apply-now">Apply now</a>
                         </div>
                     </div>
                     </div>
@@ -156,6 +156,16 @@ $get_states = get_state_location();
     $(document).ready(function(){
         $('#search-job-form').on('submit', function(e){
             e.preventDefault();
+
+            if($('#location').val() == ""){
+                Snackbar.show({
+                    text: "Please Select Your Location !",
+                    pos: 'bottom-center'
+                });
+                $('#location').focus();
+                return;
+            }
+
             $.ajax({
                 type: "get",
                 url: "{{ route('filter-job') }}",

@@ -88,16 +88,20 @@ class CareerController extends Controller
                                     </div>
                                     </div>
                                     <div class="col-12 col-lg-4 col-md-12 col-sm-12 right-job-btn">
-                                    <a href="view-job.php/{{ $get_all_job->job_id }}" class="btn btn-apply-now">Apply now</a>
+                                    <a href=" '. route("view-job", $value->job_id) .'" class="btn btn-apply-now">Apply now</a>
                                     </div>
                                 </div>
                                 </div>
                             </div>
                         ';
                     }
+                    $message_status = "job";
+                    if($result->count() > 1){
+                        $message_status = "jobs";
+                    }
                     return response()->json([
                         "code" => 200,
-                        "message" => " Total " . $result->count() . " Jobs Found",
+                        "message" => " Total " . $result->count() . " " .$message_status. " Found",
                         "data" => $job_html,
                     ]);
                 }else{
@@ -110,6 +114,24 @@ class CareerController extends Controller
             return ($th->getMessage());
         }
     }
-    
 
+    public function viewJob($job_id){
+        try {
+            $related_jobs = get_related_jobs(1, $job_id);
+            $job = get_single_job(1, $job_id);
+            $company = DB::table('tic_company')->where('company_id', $job->company_id)->first();
+            $company_location_info = DB::table('tic_company_locations')->where('location_id', $job->company_location_id)->first();
+            $no_of_job_applicant = DB::table('tic_candidates_applicants')->where('job_id', $job_id)->count();
+            $count_todays_added_job = DB::table('tic_company_jobs')
+                        ->where('cloud_id', 1)
+                        ->where('job_status', "Active")
+                        ->whereDate('date', date('Y-m-d'))
+                        ->count();
+            return view('frontend/pages/view_job')->with(compact('no_of_job_applicant', 'related_jobs', 'job', 'count_todays_added_job', 'company', 'company_location_info'));
+        } catch (\Throwable $th) {
+            return ($th->getMessage());
+        }
+    }
+    
 }
+ 

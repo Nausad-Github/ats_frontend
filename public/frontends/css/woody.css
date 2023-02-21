@@ -853,7 +853,18 @@ body {
   font-style: normal;
   font-weight: 400;
 }
-
+.gender-div input:checked + label {
+	background-color: #a49966;
+}
+.gender-div label:hover {
+  background-color: #a49966;
+}
+.add-num-btn span {
+  background-color: #a49966;
+}
+.btn.btn-default:hover{
+  background-color: #7f7751 !important;
+}
 h1,
 h2,
 h3,
@@ -864,7 +875,7 @@ h6,
 .display-1,
 .display-2,
 .heading-lg,
-.heading-sm-1 {
+.heading-sm-1, .job-ttl {
   color: #363020;
 }
 
@@ -7261,7 +7272,7 @@ ul li:last-child .card-list-4 {
 .box-we-hiring::after {
   content: "";
   position: absolute;
-  bottom: 15px;
+  bottom: 37px;
   right: -5px;
   height: 120px;
   width: 250px;
